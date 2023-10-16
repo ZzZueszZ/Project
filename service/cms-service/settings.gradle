@@ -1,0 +1,8 @@
+rootProject.name = 'cms-service'
+new File("src/main/resources/application-default.yml").createNewFile()
+
+if(Boolean.valueOf(DEBUG_LIBS)){
+    include ':microservice-starter', 'platform-protos'
+    project(':platform-protos').projectDir = new File("../../platform-protos/java")
+    project(':microservice-starter').projectDir = new File("../microservice-starter")
+}

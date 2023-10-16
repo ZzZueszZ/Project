@@ -1,0 +1,70 @@
+server:
+  port: 8081
+  tomcat:
+    relaxed-query-chars: "|,{,},[,]"
+spring:
+  application:
+    name: cms-service
+  sql:
+    init:
+      mode: always
+  jpa:
+    show-sql: true
+    open-in-view: false
+    hibernate:
+      ddl-auto: none
+    properties:
+      jakarta:
+        persistence:
+          schema-generation:
+            create-source: metadata
+            scripts:
+              action: create
+              create-target: migration/sql/create.sql
+      hibernate:
+        format_sql: true
+        globally_quoted_identifiers: true
+        dialect: org.hibernate.dialect.MySQLDialect
+  servlet:
+    multipart:
+      max-file-size: 10MB
+
+  jackson:
+    property-naming-strategy: LOWER_CAMEL_CASE
+    default-property-inclusion: non_null
+    serialization:
+      WRITE_DATES_AS_TIMESTAMPS: true
+
+database:
+  writer:
+    url: jdbc:mysql://14.225.241.239:33003/traning?useSSL=false
+    username: demo_train
+    password: "123456789o"
+  reader:
+    url: jdbc:mysql://14.225.241.239:33003/traning?useSSL=false
+    username: demo_train
+    password: "123456789o"
+
+jwt:
+  private:
+    key: classpath:app.key
+  public:
+    key: classpath:app.pub
+  jwtRefreshExpirationS: 86400
+  jwtAccessTokenExpirationS: 100
+
+springdoc:
+  # Specify the path of the OpenAPI documentation
+  api-docs.path: /api-docs
+  swagger-ui:
+    # Specify the path of the Swagger UI
+    path: /swagger-ui.html
+    # Enable or disable Swagger UI
+    enabled: true
+
+logging:
+  level:
+    root: INFO
+    org.springframework.*: INFO
+    dev.xbase.*: DEBUG
+    org.hibernate.orm.jdbc.bind: TRACE

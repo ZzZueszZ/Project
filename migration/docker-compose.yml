@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  migratedb-info:
+    build: .
+    command: -url=jdbc:mysql://14.225.241.239:33003/traning?useSSL=false -user=demo_train -password=123456789o -connectRetries=60 info
+  migratedb-migrate:
+    build: .
+    command: -url=jdbc:mysql://14.225.241.239:33003/traning?useSSL=false -user=demo_train -password=123456789o -connectRetries=60 migrate

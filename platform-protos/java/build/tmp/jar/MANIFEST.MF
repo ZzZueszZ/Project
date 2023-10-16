@@ -1,0 +1,6 @@
+Manifest-Version: local-20231017-053900-SNAPSHOT-SNAPSHOT
+Build-Timestamp: 2023-10-17T05:39:00.861+0700
+Created-By: Gradle 8.0
+Build-Jdk: 17.0.5 (GraalVM Community 17.0.5+8-jvmci-22.3-b08)
+Build-OS: Mac OS X x86_64 14.0
+
