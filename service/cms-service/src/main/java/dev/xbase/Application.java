@@ -1,5 +1,6 @@
 package dev.xbase;
 
+import dev.xbase.core.configurations.SpringContext;
 import dev.xbase.core.starter.autoconfigure.email.EmailService;
 import dev.xbase.core.starter.autoconfigure.email.domain.Address;
 import dev.xbase.core.starter.autoconfigure.email.domain.Addresses;
@@ -13,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 
 import java.util.List;
 
@@ -20,16 +22,18 @@ import java.util.List;
 public class Application implements CommandLineRunner {
     @Autowired
     EmailService emailService;
+    @Autowired
+    ApplicationContext applicationContext;
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
 
     @Override
-    public void run(String... args) throws Exception {
+    public void run(String... args) {
         PrepareEmail prepareEmail = PrepareEmail.builder()
                 .from(new Address("vunt", "nguyenthachvu.vn@gmail.com"))
                 .tos(new Addresses(List.of(new Address("nguyenthachvu.vn@gmail.com", "nguyenthachvu.vn@gmail.com"))))
-                .subject(new EmailSubject("Change email"))
+                .subject(new EmailSubject(applicationContext.getId()))
                 .type(EmailBodyType.Text)
                 .body(new EmailBody("test"))
                 .ccs(Addresses.ofEmpty())
