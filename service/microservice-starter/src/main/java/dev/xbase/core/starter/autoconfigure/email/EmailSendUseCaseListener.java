@@ -1,5 +1,7 @@
 package dev.xbase.core.starter.autoconfigure.email;
 
+import dev.xbase.core.starter.autoconfigure.email.domain.MailStatus;
+import dev.xbase.core.starter.autoconfigure.email.domain.PrepareEmail;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -7,8 +9,6 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
-import dev.xbase.core.starter.autoconfigure.email.domain.MailStatus;
-import dev.xbase.core.starter.autoconfigure.email.domain.PrepareEmail;
 
 @Service
 @RequiredArgsConstructor

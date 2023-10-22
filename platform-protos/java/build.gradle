@@ -10,7 +10,7 @@ plugins {
 def tag = property("CI_TAG") ? "${property("CI_TAG")}-${property("CI_COMMIT_SHORT_SHA")}-RELEASE" : null
 def buildVersion = property("CI_CURRENT_BRANCH") ? "${property("CI_CURRENT_BRANCH")}-${property("CI_COMMIT_SHORT_SHA")}-SNAPSHOT" : "local-${new SimpleDateFormat("yyyyMMdd-HHmmss").format(new Date())}-SNAPSHOT"
 
-group = 'tech.outsource'
+group = 'dev.xbase'
 version = tag ? tag : buildVersion
 print "Working version: " + version
 repositories {
@@ -84,7 +84,7 @@ publishing {
     }
     publications {
         maven(MavenPublication) {
-            groupId = "tech.outsource"
+            groupId = "dev.xbase"
             artifactId = "platform-protos"
             version = version
             from components.java

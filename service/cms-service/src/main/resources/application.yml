@@ -1,7 +1,13 @@
 server:
-  port: 8081
+  port: 8080
   tomcat:
     relaxed-query-chars: "|,{,},[,]"
+app:
+  module:
+    email:
+      enabled: true
+      config:
+        debug: false
 spring:
   application:
     name: cms-service

@@ -8,7 +8,7 @@ def tag = property("CI_TAG")
 def branchName = property("CI_CURRENT_BRANCH")
 def buildVersion = branchName ? branchName : 'local'
 
-group = 'tech.outsource'
+group = 'dev.xbase'
 version = tag ? "${tag}-RELEASE" : "${buildVersion}-SNAPSHOT"
 
 configurations {
@@ -48,8 +48,8 @@ dependencies {
         implementation project(':platform-protos')
         implementation project(':microservice-starter')
     } else {
-        implementation "tech.outsource:platform-protos:${platformProtosVersion}"
-        implementation "tech.outsource:microservice-starter:${microserviceVersion}"
+        implementation "dev.xbase:platform-protos:${platformProtosVersion}"
+        implementation "dev.xbase:microservice-starter:${microserviceVersion}"
     }
     implementation "org.mapstruct:mapstruct:${mapstructVersion}"
     annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"

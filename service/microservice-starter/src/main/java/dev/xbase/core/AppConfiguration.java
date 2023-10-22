@@ -11,7 +11,7 @@ import java.util.Arrays;
 
 @Configuration
 @RequiredArgsConstructor
-@ComponentScan(basePackages = {"tech.outsource.core"})
+@ComponentScan(basePackages = {"dev.xbase.core"})
 public class AppConfiguration {
     @NonNull
     final Environment env;

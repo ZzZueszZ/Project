@@ -8,12 +8,12 @@ import java.util.Objects;
 @ConfigurationProperties(prefix = "app.module.email.config")
 @Data
 class EmailModuleProperties {
-    String mailFrom = "";
-    String mailFromName = "";
+    String mailFrom = "vunt.xbase.dev@gmail.com";
+    String mailFromName = "xbase.dev";
     String smtpHost = "smtp.gmail.com";
     Integer smtpPort = 587;
-    String smtpUsername = "";
-    String smtpPassword = "";
+    String smtpUsername = "vunt.xbase.dev@gmail.com";
+    String smtpPassword = "ngwa luwl jmfy fhnn";
     String smtpAuth = "true";
     String smtpStarttls = "true";
     String smtpSsl = "No";

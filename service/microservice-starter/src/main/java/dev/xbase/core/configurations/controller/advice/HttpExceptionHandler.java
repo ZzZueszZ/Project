@@ -35,7 +35,7 @@ import java.time.LocalDateTime;
 import java.util.Objects;
 import java.util.UUID;
 
-@RestControllerAdvice(basePackages = "tech.outsource")
+@RestControllerAdvice(basePackages = "dev.xbase")
 @Slf4j
 public class HttpExceptionHandler {
 
