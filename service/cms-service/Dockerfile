@@ -7,6 +7,7 @@ COPY configurations.gradle .
 COPY src ./src
 
 RUN gradle build -x test
+
 ########################
 FROM openjdk:17-alpine
 RUN apk add --no-cache tzdata
