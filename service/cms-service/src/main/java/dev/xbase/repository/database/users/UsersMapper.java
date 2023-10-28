@@ -1,6 +1,6 @@
-package dev.xbase.domain.users;
+package dev.xbase.repository.database.users;
 
-import dev.xbase.repository.database.users.UserEntity;
+import dev.xbase.domain.users.User;
 import org.mapstruct.Mapper;
 import dev.xbase.core.model.mapper.EntityMapper;
 

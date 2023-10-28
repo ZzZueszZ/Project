@@ -8,7 +8,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Service;
-import dev.xbase.domain.users.UsersMapper;
+import dev.xbase.repository.database.users.UsersMapper;
 
 import java.util.Optional;
 

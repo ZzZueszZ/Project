@@ -154,11 +154,11 @@ const AccountsTable: React.FC = () => {
       valueType: 'select',
       fieldProps: {
         mode: 'multiple',
-        fieldNames: {
-          value: 'code',
-        },
+        // fieldNames: {
+        //   value: 'status',
+        // },
       },
-      initialValue: ['ACTIVE'],
+      initialValue: ['ACTIVE', 'LOCKED', 'EXPIRED'],
       valueEnum: {
         ACTIVE: {text: 'ACTIVE', status: 'ACTIVE'},
         LOCKED: {text: 'LOCKED', status: 'LOCKED'},

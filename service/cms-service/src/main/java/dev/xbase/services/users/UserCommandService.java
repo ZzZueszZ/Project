@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import dev.xbase.domain.users.User;
 import dev.xbase.domain.users.UserId;
 import dev.xbase.domain.users.UserIds;
-import dev.xbase.domain.users.UsersMapper;
+import dev.xbase.repository.database.users.UsersMapper;
 
 import java.util.stream.Collectors;
 

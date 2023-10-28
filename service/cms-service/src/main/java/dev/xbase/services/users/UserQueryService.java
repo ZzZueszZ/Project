@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import dev.xbase.domain.users.User;
 import dev.xbase.domain.users.UserId;
 import dev.xbase.domain.users.UserName;
-import dev.xbase.domain.users.UsersMapper;
+import dev.xbase.repository.database.users.UsersMapper;
 import dev.xbase.core.configurations.controller.exceptions.ResourceNotFoundException;
 
 @Service
