@@ -20,8 +20,8 @@ public class MailTransfer {
     public MailStatus send(PrepareEmail mail, EmailModuleProperties emailModuleProperties) {
         try {
            return sendEmail(mail, emailModuleProperties);
-        } catch (Exception e) {
-            log.error("Send mail isn't successfully: {}", e.getMessage());
+        } catch (Exception ex) {
+            log.error(ex.getMessage(), ex);
         }
         return MailStatus.SENT_FAIL;
     }

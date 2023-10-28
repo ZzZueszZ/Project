@@ -7,6 +7,7 @@ import lombok.NonNull;
 import lombok.experimental.FieldDefaults;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.oauth2.jwt.Jwt;
+import org.springframework.security.oauth2.jwt.JwtValidationException;
 import org.springframework.stereotype.Service;
 import dev.xbase.core.configurations.controller.exceptions.TokenRefreshException;
 import dev.xbase.core.starter.security.JWTTokenService;
@@ -35,9 +36,13 @@ public final class TokenAuthenticationUseCaseService {
     }
 
     public Integer findRefreshToken(String requestRefreshToken) {
-        Jwt jwt = jwtTokenService.getJwt(requestRefreshToken);
-        return Optional.ofNullable(jwt.getSubject())
-                .map(Integer::valueOf)
-                .orElseThrow(TokenRefreshException::new);
+        try {
+            Jwt jwt = jwtTokenService.getJwt(requestRefreshToken);
+            return Optional.ofNullable(jwt.getSubject())
+                    .map(Integer::valueOf)
+                    .orElseThrow(TokenRefreshException::new);
+        } catch (JwtValidationException ex) {
+            throw new TokenRefreshException();
+        }
     }
 }
