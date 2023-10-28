@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
   tomcat:
     relaxed-query-chars: "|,{,},[,]"
 app:
@@ -57,7 +57,7 @@ jwt:
   public:
     key: classpath:app.pub
   jwtRefreshExpirationS: 86400
-  jwtAccessTokenExpirationS: 100
+  jwtAccessTokenExpirationS: 300
 
 springdoc:
   # Specify the path of the OpenAPI documentation
