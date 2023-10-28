@@ -25,8 +25,8 @@ spring:
           schema-generation:
             create-source: metadata
             scripts:
-              action: create
-              create-target: migration/sql/create.sql
+              action: none
+              create-target: migration/sql/init_ddl.sql
       hibernate:
         format_sql: true
         globally_quoted_identifiers: true
