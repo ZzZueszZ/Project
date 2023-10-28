@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/cms-service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/cms-service.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1529450257/cms-service.microservice-starter.main.iml" filepath="$PROJECT_DIR$/.idea/modules/1529450257/cms-service.microservice-starter.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/cms_management.iml" filepath="$PROJECT_DIR$/.idea/cms_management.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1806777488/dev.xbase.cms-service.microservice-starter.main.iml" filepath="$PROJECT_DIR$/.idea/modules/-1806777488/dev.xbase.cms-service.microservice-starter.main.iml" />
     </modules>
   </component>
 </project>
