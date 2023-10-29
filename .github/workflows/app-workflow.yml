@@ -70,8 +70,9 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: "Build, Tag, and push the Docker image - latest"
+        working-directory: ./service/cms-service
         env:
-          IMAGE_NAME: vunt/xbase_cms_backend
+          IMAGE_NAME: "vunt/xbase_cms_backend"
           IMAGE_TAG_HASH: ${GITHUB_SHA}
           IMAGE_TAG: latest
         run: |
