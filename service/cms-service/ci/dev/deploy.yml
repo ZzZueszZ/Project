@@ -1,0 +1,12 @@
+version: '3'
+services:
+  xbase_cms_backend:
+    image: vunt/xbase_cms_backend:latest
+    restart: always
+    networks:
+      - pronet
+
+networks:
+  pronet:
+    external:
+      name: pronet
