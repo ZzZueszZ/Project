@@ -77,7 +77,7 @@ jobs:
           file: ./service/cms-service/Dockerfile
           push: true
           tags: |
-            vunt/xbase_cms_backend:${GITHUB_SHA::7}
+            vunt/xbase_cms_backend:${{GITHUB_SHA::7}}
             vunt/xbase_cms_backend:latest
 
   deploy:
