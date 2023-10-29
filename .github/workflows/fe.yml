@@ -1,0 +1,16 @@
+name: Build & Delpoyment FE
+
+on:
+  pull_request:
+    branches: [ develop ]
+    paths:
+      - 'ui/**'
+      - '.github/workflows/fe.yml'
+  push:
+    branches: [ develop ]
+    paths:
+      - 'ui/**'
+      - '.github/workflows/fe.yml'
+
+permissions:
+  contents: read
