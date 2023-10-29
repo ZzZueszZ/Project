@@ -68,19 +68,16 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-      - name: Step
-        run: echo ${GITHUB_SHA}
-      - name: Build and push
-        uses: docker/build-push-action@v4
+
+      - name: "Build, Tag, and push the Docker image - latest"
         env:
-          IMAGE_TAG: ${GITHUB_SHA::7}
-        with:
-          context: ./service/cms-service
-          file: ./service/cms-service/Dockerfile
-          push: true
-          tags: |
-            vunt/xbase_cms_backend:$IMAGE_TAG
-            vunt/xbase_cms_backend:latest
+          IMAGE_NAME: vunt/xbase_cms_backend
+          IMAGE_TAG_HASH: ${GITHUB_SHA}
+          IMAGE_TAG: latest
+        run: |
+          docker build -t $IMAGE_NAME:$IMAGE_TAG_HASH -t $IMAGE_NAME:$IMAGE_TAG .
+          docker push $IMAGE_NAME:$IMAGE_TAG    
+          docker push $IMAGE_NAME:$IMAGE_TAG_HASH
 
   deploy:
     if: ${{ github.ref == 'refs/heads/develop' }}
@@ -98,7 +95,7 @@ jobs:
           SERVER_HOST: ${{ secrets.SERVER_HOST }}
           SERVER_PORT: ${{ secrets.SERVER_PORT }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
-          GITHUB_SHA_SHORT: ${GITHUB_SHA::7}
+          GITHUB_SHA_SHORT: ${GITHUB_SHA}
         run: |
           set -e
           cd ./service/cms-service/ci/dev
