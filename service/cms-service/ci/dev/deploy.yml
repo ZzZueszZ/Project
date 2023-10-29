@@ -1,7 +1,7 @@
 version: '3'
 services:
   xbase_cms_backend:
-    image: vunt/xbase_cms_backend:${GITHUB_SHA_SHORT}
+    image: vunt/xbase_cms_backend:${GITHUB_SHA::10}
     restart: always
     networks:
       - pronet
