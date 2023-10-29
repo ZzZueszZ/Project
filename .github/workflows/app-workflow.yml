@@ -73,7 +73,7 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         env:
-          IMAGE_TAG: ${{ env.GITHUB_SHA::7 }}
+          IMAGE_TAG: ${GITHUB_SHA::7}
         with:
           context: ./service/cms-service
           file: ./service/cms-service/Dockerfile
