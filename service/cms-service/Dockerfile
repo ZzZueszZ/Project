@@ -3,7 +3,8 @@ FROM gradle:8.1.1-jdk17 as builder
 WORKDIR /app
 COPY build.gradle .
 COPY gradle.properties .
-COPY configurations.gradle .
+COPY settings.gradle .
+COPY gradlew .
 COPY src ./src
 
 RUN gradle build -x test
