@@ -77,10 +77,10 @@ jobs:
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
-          context: .
+          context: service/cms-service
           file: Dockerfile
           push: true
-          tags: vunt/cms_backend:latest
+          tags: vunt/xbase_cms_backend:latest
 
   deploy:
     if: ${{ github.ref == 'refs/heads/develop' }}
