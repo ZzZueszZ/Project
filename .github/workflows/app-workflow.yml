@@ -12,12 +12,12 @@ on:
     branches: [ develop ]
     paths:
       - 'service/**'
-      - '.github/workflows/app-workflow.yaml'
+      - '.github/workflows/app-workflow.yml'
   push:
     branches: [ develop ]
     paths:
       - 'service/**'
-      - '.github/workflows/app-workflow.yaml'
+      - '.github/workflows/app-workflow.yml'
 
 permissions:
   contents: read
