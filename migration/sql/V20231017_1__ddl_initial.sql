@@ -57,3 +57,18 @@ alter table `users`
 
 alter table `users`
     add constraint UK_r43af9ap4edm43mmtq01oddj6 unique (`username`);
+
+
+CREATE TABLE organizations
+(
+    org_id   integer      not null auto_increment,
+    org_code varchar(100)           NOT NULL,
+    org_name varchar(256)           NOT NULL,
+    parent_id integer NULL,
+    `path`   varchar(500)           NULL,
+    status integer DEFAULT 0 NOT NULL,
+    primary key (`org_id`)
+)
+ENGINE = InnoDB
+DEFAULT CHARSET = utf8mb4
+COLLATE = utf8mb4_general_ci;

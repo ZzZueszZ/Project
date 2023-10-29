@@ -94,6 +94,7 @@ jobs:
           GITHUB_SHA_SHORT: ${GITHUB_SHA::10}
         run: |
           set +e
+          echo ${GITHUB_SHA::10}
           which ssh-agent || ( apk add openssh-client )
           eval $(ssh-agent -s)
           mkdir -p ~/.ssh
@@ -106,4 +107,6 @@ jobs:
           ssh -p${{ secrets.SERVER_PORT }} -4 -fTN -L localhost:8666:/var/run/docker.sock ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}
           export DOCKER_HOST=localhost:8666
           cd ./service/cms-service/ci/dev
+          sed -i 's/__DOCKER_TAG__/'${GITHUB_SHA::10}'/g' docker-compose.yml
+          cat docker-compose.yml
           docker-compose -f deploy.yml up -d
