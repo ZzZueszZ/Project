@@ -75,7 +75,8 @@ jobs:
           context: ./service/cms-service
           file: ./service/cms-service/Dockerfile
           push: true
-          tags: vunt/xbase_cms_backend:latest
+          tags: |
+            vunt/xbase_cms_backend:latest
 
   deploy:
     if: ${{ github.ref == 'refs/heads/develop' }}
