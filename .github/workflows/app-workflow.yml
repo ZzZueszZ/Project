@@ -69,15 +69,17 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
       - name: Step
-        run: echo ${GITHUB_SHA::7}
+        run: echo ${GITHUB_SHA}
       - name: Build and push
         uses: docker/build-push-action@v4
+        env:
+          IMAGE_TAG: ${{ env.GITHUB_SHA::7 }}
         with:
           context: ./service/cms-service
           file: ./service/cms-service/Dockerfile
           push: true
           tags: |
-            vunt/xbase_cms_backend:${{GITHUB_SHA::7}}
+            vunt/xbase_cms_backend:$IMAGE_TAG
             vunt/xbase_cms_backend:latest
 
   deploy:
