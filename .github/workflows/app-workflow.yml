@@ -68,7 +68,8 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-
+      - name: Step
+        run: echo ${GITHUB_SHA::7}
       - name: Build and push
         uses: docker/build-push-action@v4
         with:
@@ -76,6 +77,7 @@ jobs:
           file: ./service/cms-service/Dockerfile
           push: true
           tags: |
+            vunt/xbase_cms_backend:${GITHUB_SHA::7}
             vunt/xbase_cms_backend:latest
 
   deploy:
@@ -87,13 +89,14 @@ jobs:
       - uses: actions/checkout@v3
       - name: Add Server key
         run: |
-          touch key.txt && echo "${{ secrets.SERVER_KEY }}" > key.txt
-          chmod 600 key.txt
+          touch ./service/cms-service/ci/dev/key.txt && echo "${{ secrets.SERVER_KEY }}" > ./service/cms-service/ci/dev/key.txt
+          chmod 600 ./service/cms-service/ci/dev/key.txt
       - name: Deploy the application
         env:
           SERVER_HOST: ${{ secrets.SERVER_HOST }}
           SERVER_PORT: ${{ secrets.SERVER_PORT }}
           SERVER_USER: ${{ secrets.SERVER_USER }}
+          GITHUB_SHA_SHORT: ${GITHUB_SHA::7}
         run: |
           set -e
           cd ./service/cms-service/ci/dev
