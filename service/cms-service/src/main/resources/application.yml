@@ -43,13 +43,13 @@ spring:
 
 database:
   writer:
-    url: jdbc:mysql://14.225.241.239:33003/traning?useSSL=false
-    username: demo_train
-    password: "123456789o"
+    url: jdbc:mysql://14.225.241.239:33003/cms_dev?useSSL=false
+    username: cms_dev
+    password: "cms_dev!@#456"
   reader:
-    url: jdbc:mysql://14.225.241.239:33003/traning?useSSL=false
-    username: demo_train
-    password: "123456789o"
+    url: jdbc:mysql://14.225.241.239:33003/cms_dev?useSSL=false
+    username: cms_dev
+    password: "cms_dev!@#456"
 
 jwt:
   private:
