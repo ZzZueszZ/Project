@@ -10,14 +10,14 @@ name: Java CI with Gradle
 on:
   pull_request:
     branches: [ develop ]
-    paths:
-      - 'service/**'
-      - '.github/workflows/app-workflow.yaml'
+    # paths:
+    #   - 'service/**'
+    #   - '.github/workflows/app-workflow.yaml'
   push:
     branches: [ develop ]
-    paths:
-      - 'service/**'
-      - '.github/workflows/app-workflow.yaml'
+    # paths:
+    #   - 'service/**'
+    #   - '.github/workflows/app-workflow.yaml'
 
 permissions:
   contents: read
