@@ -109,4 +109,5 @@ jobs:
           cd ./service/cms-service/ci/dev
           sed -i 's/__DOCKER_TAG__/'${GITHUB_SHA::10}'/g' deploy.yml
           cat deploy.yml
+          docker-compose -f deploy.yml down
           docker-compose -f deploy.yml up -d
