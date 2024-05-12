@@ -25,9 +25,12 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: ui
 
       - name: Build for production
         run: npm run build:prod
+        working-directory: ui
+        
       - name: Deploy to production
         uses: peaceiris/actions-gh-pages@v3
         with:
