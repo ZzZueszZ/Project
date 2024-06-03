@@ -32,6 +32,13 @@
         icon: 'TeamOutlined',
         access: 'normalRouteFilter',
         component: './system/accounts',
+      },
+      {
+        path: '/account-management/products',
+        name: 'Product',
+        icon: 'TeamOutlined',
+        access: 'normalRouteFilter',
+        component: './system/products',
       }
     ],
   },

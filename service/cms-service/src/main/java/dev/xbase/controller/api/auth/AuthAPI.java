@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @RequestMapping("/pub/authenticate")
-public interface AuthAPI {
+public interface    AuthAPI {
     @PostMapping
     JwtResponse auth(@Valid @RequestBody LoginRequest loginRequest);
 
